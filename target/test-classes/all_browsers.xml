@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Tests for CHROME"   >
+        <parameter name="browser" value="CHROME"/>
+        <groups>
+            <run>
+                <include name="uitest"/>
+                <exclude name="broken"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="pgatTests.PgaTourFeed"/>
+        </classes>
+    </test>
+    <test name="Tests for FIREFOX"   >
+        <parameter name="browser" value="FIREFOX"/>
+        <groups>
+            <run>
+                <include name="uitest"/>
+                <exclude name="broken"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="pgatTests.PgaTourFeed"/>
+        </classes>
+    </test>
+</suite>

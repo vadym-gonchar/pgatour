@@ -19,6 +19,7 @@ public class TestBase {
 
   WebDriver driver;
   ElementsHelper elementsHelper;
+  Initiation initiation;
   LogInAndOutPageLocators logInAndOutPageLocators = new LogInAndOutPageLocators();
 
   @BeforeGroups(groups = {"uitest"})
@@ -52,17 +53,18 @@ public class TestBase {
                 browser + ", expected one of 'CHROME', 'FIREFOX', 'EDGE', 'IE11', 'OPERA'");
     }
     elementsHelper = new ElementsHelper(driver);
-    Initiation initiation = new Initiation(driver);
+    initiation = new Initiation(driver);
 
-    driver.get(initiation.loginURL);
-    driver.manage().window().maximize();
+    driver.navigate().to(initiation.loginURL);
+    driver.manage().window().fullscreen();
     initiation.init();
   }
 
   @AfterGroups(groups = {"uitest"})
   public void logout() {
-    driver.findElement(logInAndOutPageLocators.dropdown).click();
-    driver.findElement(logInAndOutPageLocators.signOutButton).click();
+    elementsHelper.scrollToBottom();
+    elementsHelper.clickElement(logInAndOutPageLocators.manageProfile, 10);
+    elementsHelper.clickElement(logInAndOutPageLocators.logout, 10);
     if (driver != null)
       driver.quit();
   }

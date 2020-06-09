@@ -1,0 +1,5 @@
+helpers/ElementsHelper.class
+helpers/Initiation.class
+locators/LogInAndOutPageLocators.class
+helpers/Browsers.class
+locators/PgaTourFeedLocators.class

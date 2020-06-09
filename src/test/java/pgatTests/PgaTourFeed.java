@@ -4,10 +4,12 @@ import locators.PgaTourFeedLocators;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PgaTourFeed extends TestBase{
+public class PgaTourFeed extends TestBase {
   PgaTourFeedLocators pgaTourFeedLocators = new PgaTourFeedLocators();
+
   @Test(priority = 1, groups = "uitest")
-  public void pgaTourFeedTest(){
+  public void pgaTourFeedTest() {
+
     Assert.assertEquals(elementsHelper.getElementTextVisibilityOf(pgaTourFeedLocators.everythingTab,
             10), "EVERYTHING");
     Assert.assertEquals(elementsHelper.getElementTextVisibilityOf(pgaTourFeedLocators.newsTab,

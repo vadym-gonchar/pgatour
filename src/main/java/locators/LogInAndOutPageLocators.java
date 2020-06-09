@@ -3,12 +3,12 @@ package locators;
 import org.openqa.selenium.By;
 
 public class LogInAndOutPageLocators {
-  public By loginModal = By.xpath("//div[@class='login-button log-in']");
-  public By loginField = By.cssSelector("#gigya-loginID-42512649484830184");
-  public By passwordField = By.xpath("//input[@id='gigya-password-122670099552285500']");
-  public By signInButton = By.
-          xpath("//form[@id='gigya-login-form']//input[@class='gigya-input-submit']");
-  public By dropdown = By.xpath("//b[@class='caret icon-chevron-down']");
-  public By signOutButton = By.xpath("//a[contains(text(),'Logout')]");
-
+  public By loginButton = By.xpath("//div[@class='login-button log-in']");
+  public By loginModal = By.cssSelector("#gigya-modal-plugin-container-showScreenSet_content");
+  public By loginField = By.cssSelector("[name='username']");
+  public By passwordField = By.cssSelector("[name='password']");
+  public By signInButton = By.cssSelector(".gigya-input-submit");
+  public By manageProfile = By.xpath("//a[@class='login-button logged-in']//img");
+  public By logout = By.xpath("//a[@class='gigya-composite-control gigya-composite-control-link " +
+          "js-logout gigya-screen-navigation'][contains(text(),'Logout')]");
 }
